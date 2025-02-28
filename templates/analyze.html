@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sınav Sonuçları</title>
+    <!-- Bootstrap CSS bağlantısı -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h3>Sınav Sonuçları</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Kullanıcı Bilgileri -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Kullanıcı Adı</label>
+                            <input type="text" class="form-control" id="username" value="Ahmet Yılmaz" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="examname" class="form-label">Sınav Adı</label>
+                            <input type="text" class="form-control" id="examname" value="Matematik Sınavı" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="correctAnswers" class="form-label">Doğru Yapılan Soru Sayısı</label>
+                            <input type="number" class="form-control" id="correctAnswers" value="0" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="totalQuestions" class="form-label">Toplam Soru Sayısı</label>
+                            <input type="number" class="form-control" id="totalQuestions" value="0" disabled>
+                        </div>
+                        <!-- Sonuç Hesaplaması -->
+                        <div class="mt-4">
+                            <h5>Sonuç:</h5>
+                            <p>
+                                <strong>Başarı Oranı:</strong> 
+                                <span id="successRate">
+                                    0
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS ve bağımlılıkları -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        // Başarı oranını hesaplayan JavaScript
+        window.onload = function() {
+            var correctAnswers = document.getElementById('correctAnswers').value;
+            var totalQuestions = document.getElementById('totalQuestions').value;
+
+            var successRate = (correctAnswers / totalQuestions) * 100;
+            document.getElementById('successRate').innerText = successRate.toFixed(2) + '%';
+        }
+    </script>
+</body>
+</html>

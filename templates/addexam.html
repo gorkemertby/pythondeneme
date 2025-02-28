@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soru Hazırlama Aracı</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question-input, .answer-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .answer-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .answer-option input {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Test Hazırlama Aracı</h1>
+
+        <!-- Sınav Başlığı ve İçeriği Alanları -->
+        <label for="exam-title">Test Başlığı:</label>
+        <input type="text" id="exam-title" class="input-field" placeholder="Sınav başlığını buraya yazın...">
+
+        <label for="exam-description">Sınav İçeriği:</label>
+        <textarea id="exam-description" class="input-field" placeholder="Sınav içeriğini buraya yazın..." rows="4"></textarea>
+
+        <!-- Soru ve Cevaplar Alanı -->
+        <label for="question">Soru:</label>
+        <textarea id="question" class="question-input" placeholder="Sorunuzu buraya yazın..." rows="3" required></textarea>
+        
+        <label for="answer1">Cevap 1:</label>
+        <div class="answer-option">
+            <input type="radio" name="correct_answer" id="answer1_radio" value="answer1">
+            <input type="text" id="answer1" class="answer-input" placeholder="Cevap 1'i buraya yazın" required>
+        </div>
+        
+        <label for="answer2">Cevap 2:</label>
+        <div class="answer-option">
+            <input type="radio" name="correct_answer" id="answer2_radio" value="answer2">
+            <input type="text" id="answer2" class="answer-input" placeholder="Cevap 2'yi buraya yazın" required>
+        </div>
+        
+        <label for="answer3">Cevap 3:</label>
+        <div class="answer-option">
+            <input type="radio" name="correct_answer" id="answer3_radio" value="answer3">
+            <input type="text" id="answer3" class="answer-input" placeholder="Cevap 3'ü buraya yazın" required >
+        </div>
+        
+        <label for="answer4">Cevap 4:</label>
+        <div class="answer-option">
+            <input type="radio" name="correct_answer" id="answer4_radio" value="answer4">
+            <input type="text" id="answer4" class="answer-input" placeholder="Cevap 4'ü buraya yazın"required>
+        </div>
+        
+        <button class="submit-btn" onclick="submitQuestion()">Soru Gönder</button>
+    </div>
+</body>
+</html>
