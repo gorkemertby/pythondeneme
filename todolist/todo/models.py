@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-
 class User(models.Model) : 
     password = models.CharField(max_length= 20)
     email = models.CharField( max_length= 35) 
@@ -17,7 +16,6 @@ class Exams (models.Model) :
     eid = models.BigIntegerField(primary_key=True)
     content = models.CharField(max_length=50)
     title = models.CharField(max_length=20)
-
 
 class Quizs (models.Model) :  
     qid = models.BigIntegerField(primary_key=True)
@@ -35,7 +33,7 @@ class Answers (models.Model) :
     id = models.ForeignKey(User,on_delete=models.CASCADE)
     oid = models.ForeignKey(Options,on_delete=models.CASCADE)
     content = models.CharField(max_length=50)
-
+    eid = models.ForeignKey(Exams,on_delete=models.CASCADE)
 
 class AnalyzeModel (models.Model) : 
     analyze_id = models.BigIntegerField(primary_key=True)

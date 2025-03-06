@@ -19,19 +19,19 @@
                         <!-- Kullanıcı Bilgileri -->
                         <div class="mb-3">
                             <label for="username" class="form-label">Kullanıcı Adı</label>
-                            <input type="text" class="form-control" id="username" value="Ahmet Yılmaz" disabled>
+                            <input type="text" class="form-control" id="username" value= "{{ username }} "disabled>
                         </div>
                         <div class="mb-3">
                             <label for="examname" class="form-label">Sınav Adı</label>
-                            <input type="text" class="form-control" id="examname" value="Matematik Sınavı" disabled>
+                            <input type="text" class="form-control" id="examname" value="{{exam_name}}" disabled>
                         </div>
                         <div class="mb-3">
                             <label for="correctAnswers" class="form-label">Doğru Yapılan Soru Sayısı</label>
-                            <input type="number" class="form-control" id="correctAnswers" value="0" disabled>
+                            <input type="number" class="form-control" id="correctAnswers" value="{{true_rate}}" disabled>
                         </div>
                         <div class="mb-3">
-                            <label for="totalQuestions" class="form-label">Toplam Soru Sayısı</label>
-                            <input type="number" class="form-control" id="totalQuestions" value="0" disabled>
+                            <label for="totalQuestions" class="form-label">İşaretlenen Soru Sayısı</label>
+                            <input type="number" class="form-control" id="totalQuestions" value="{{selected_option}}" disabled>
                         </div>
                         <!-- Sonuç Hesaplaması -->
                         <div class="mt-4">
@@ -60,6 +60,7 @@
             var totalQuestions = document.getElementById('totalQuestions').value;
 
             var successRate = (correctAnswers / totalQuestions) * 100;
+            if (successRate > 100) successRate = 100 ;
             document.getElementById('successRate').innerText = successRate.toFixed(2) + '%';
         }
     </script>

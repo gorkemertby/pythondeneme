@@ -12,7 +12,7 @@ def AuthService (request) :
           password = request.POST.get("password")
           email = request.POST.get("email")         
           #print("printing",email,password)
-          user = User.objects.get(email=email) 
+          user = User.objects.get(email=email)              
           #print(type(password) , type(user.password))
           if password == user.password :
              #print("BİLGİLER DOGRU")
