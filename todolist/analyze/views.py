@@ -14,7 +14,7 @@ def AnalyzeView(request,user_id,exam_id):
         user = User.objects.get(id = user_id)
         exam = Exams.objects.get(eid = exam_id)
         answers = Answers.objects.filter(id = user.id,eid = exam_id)
-        print(answers)
+        #print(answers)
         username = user.username
         exam_name = exam.title
         selected_option = int(len(answers))
